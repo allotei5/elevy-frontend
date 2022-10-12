@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { FiChevronLeft, FiCreditCard } from "react-icons/fi";
+import logo from "./logo.svg";
+import "./App.css";
+import Dashboard from "./Dashboard.component";
+import { Route, Routes } from "react-router-dom";
+import Media from "./pages/Media.component";
+import Home from "./pages/Home.component";
+import Publication from "./pages/Publication.component";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route exact path="/" element={<Dashboard />}>
+        <Route index element={<Home />} />
+        <Route path="/media" element={<Media />} />
+        <Route path="/publication" element={<Publication />} />
+      </Route>
+    </Routes>
   );
 }
 
