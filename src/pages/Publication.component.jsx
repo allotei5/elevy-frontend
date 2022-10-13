@@ -28,7 +28,7 @@ const Publication = () => {
      <h1>Media</h1>
       <PostsByPubCount />
       {!isLoading && (
-        <div className="grid grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 gap-20 md:grid-cols-2 gap-20 mb-[100px]">
           {pubs.map((medium) => (
             <AvgSentimentCountPerPub pubId={medium.id} key={medium.id} title={`Chart showing average sentiments over the months jan-sep reported by the publication: ${medium.pubName}`} />
           ))}

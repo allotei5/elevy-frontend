@@ -35,7 +35,7 @@ const AvgSentimentsByDay = () => {
                 const res = await api.get('/avgSentimentsByDay') 
                 
                 const data = {
-                    labels: res.data.map((day) => day.pubDate),
+                    labels: res.data.map((day) => `Week ${day.pubDate}`),
                     datasets: [
                     {
                         label: 'Positive',
@@ -69,7 +69,7 @@ const AvgSentimentsByDay = () => {
     }, [])
   return (
     <div>
-        <h1 className="text-lg text-center capitalize">Average Sentiments by day</h1>
+        <h1 className="text-lg text-center capitalize">Average Sentiments by week</h1>
         <div style={{height: "300px"}}>
             { !isLoading && <Line data={dataFromDB} options={{ maintainAspectRatio: false}}  />}
         </div>

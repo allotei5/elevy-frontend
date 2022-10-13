@@ -7,8 +7,18 @@ import { Route, Routes } from "react-router-dom";
 import Media from "./pages/Media.component";
 import Home from "./pages/Home.component";
 import Publication from "./pages/Publication.component";
+import PublicRoutes from "./routes/PublicRoutes";
+import { getCookie } from "./utilities";
 
 function App() {
+
+  let token = getCookie("token")
+
+  if(token =="") {
+    return (<PublicRoutes />)
+  }else {
+
+  }
 
   return (
     <Routes>

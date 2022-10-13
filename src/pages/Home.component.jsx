@@ -7,7 +7,7 @@ import AvgSentimentsByDay from "../components/AvgSentimentsByDay.component";
 const Home = () => {
   
   return (
-    <div>
+    <div className="md:mb-[10px] mb-[100px]">
       <AvgSentiments />
       <AvgSentimentsByDay />
     </div>
